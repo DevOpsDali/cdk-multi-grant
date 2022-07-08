@@ -1,7 +1,2 @@
-import { App, Stack } from 'aws-cdk-lib'
-
-
-const app = new App()
-const stack = new Stack(app, 'stack')
-
-app.synth()
+export * from './easy-principal'
+export * from './services'

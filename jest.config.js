@@ -3,7 +3,6 @@ module.exports = {
   // eslint-disable-next-line global-require
   moduleFileExtensions: [...require('jest-config').defaults.moduleFileExtensions, 'ts', 'tsx'],
   modulePathIgnorePatterns: ['./dist'],
-  testEnvironment: '<rootDir>/lib/test/environment.ts',
   collectCoverageFrom: ['lib/*.ts'],
   collectCoverage: true,
   coverageReporters: ['json', 'html', 'lcov'],
