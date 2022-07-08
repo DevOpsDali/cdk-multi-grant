@@ -2,16 +2,13 @@ import { CompositePrincipal, ServicePrincipalOpts } from 'aws-cdk-lib/aws-iam'
 import { AwsService, awsServices } from './services'
 import { ServicePrincipal } from 'aws-cdk-lib/aws-iam'
 
-
-
 const principalBase = '.amazonaws.com'
-type AwsServicePrincipal = `${AwsService}${typeof principalBase}`
 
 const servicePrincipalMap = awsServices.reduce((map, service) => {
   const returnMap = map
   returnMap[service] = `${service}${principalBase}`
   return returnMap
-}, {} as Record<AwsService, AwsServicePrincipal>)
+}, {} as Record<AwsService, string>)
 
 class EasyServicePrincipal extends ServicePrincipal {
 
@@ -24,7 +21,6 @@ class EasyServicePrincipal extends ServicePrincipal {
 }
 
 export {
-  AwsServicePrincipal,
   EasyServicePrincipal,
   principalBase,
   servicePrincipalMap,
