@@ -3019,6 +3019,9 @@
     }
   },
   "description": "@dali/easy-service-principal",
+  "docs": {
+    "stability": "experimental"
+  },
   "homepage": "git@github.com:DevOpsDali/easy-service-principal.git",
   "jsiiVersion": "1.61.0 (build abf4039)",
   "license": "MIT",
@@ -3060,5 +3063,5 @@
   },
   "types": {},
   "version": "1.0.0",
-  "fingerprint": "W3It49SQs4hn7B/NSSCDO5KLCuZRC3m02jiK6PQNTEY="
+  "fingerprint": "WLTM3HCfj2R9lLzANwrlIvXop8Pz4gegfjCbGBZLKNk="
 }

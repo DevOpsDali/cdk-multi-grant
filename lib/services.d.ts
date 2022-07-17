@@ -1,3 +1,0 @@
-declare const awsServices: readonly ["account", "acm", "apigateway", "cloudformation", "cloudfront", "cloudtrail", "cloudwatch-crossaccount", "cloudwatch", "codebuild", "codepipeline", "dynamodb", "ec2", "ecr", "ecs-tasks", "ecs", "ecs.application-autoscaling", "edgelambda", "events", "glue", "guardduty", "hooks.cloudformation", "iam", "kinesis", "kms", "lambda", "logger.cloudfront", "logs", "organizations", "rds", "redshift", "route53", "s3", "sagemaker", "secretsmanager", "sqs", "sns", "ssm", "sts", "waf", "xray"];
-declare type AwsService = typeof awsServices[number];
-export { AwsService, awsServices };

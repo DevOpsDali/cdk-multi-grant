@@ -1,19 +1,42 @@
 import { App, Stack} from 'aws-cdk-lib'
-import { AttributeType, Table } from 'aws-cdk-lib/aws-dynamodb'
-import {  Role, CompositePrincipal } from 'aws-cdk-lib/aws-iam'
+import { Template } from 'aws-cdk-lib/assertions'
+import { Role, CompositePrincipal, ServicePrincipal } from 'aws-cdk-lib/aws-iam'
 import  { EasyServicePrincipal } from './easy-principal'
+import { AwsService } from './services'
 
-describe('it', () => {
-  it('does stuff', () => {
-    
+let app:App 
+let stack: Stack
+
+describe('Easy Service Principal', () => {
+  beforeEach(() => {
+    app = new App()
+    stack = new Stack(app, 'Stack')
+  })
+  it('inits correctly', () => {
+    const principal = new EasyServicePrincipal('lambda')
+    expect(principal).toBeInstanceOf(ServicePrincipal)
+  })
+  it('creates composite', () => {
     const composite = EasyServicePrincipal.composite(['cloudformation', 'lambda'])
-    const app = new App()
-    const stack = new Stack(app, 'stack')
     new Role(stack, 'role', { assumedBy: composite})
-    new Table(stack, 'table', {
-      partitionKey: { type: AttributeType.NUMBER, name: 'id'}
+    expect(composite).toBeInstanceOf(CompositePrincipal)
+    Template.fromStack(stack).hasResourceProperties('AWS::IAM::Role', {
+      AssumeRolePolicyDocument: {
+        Statement: [
+          generatePrincipalAssumeStatement('cloudformation'),
+          generatePrincipalAssumeStatement('lambda') 
+        ] 
+      }
     })
-  expect(composite).toBeInstanceOf(CompositePrincipal)
-  // Template.fromStack(stack).hasResource('AWS::IAM::', props)
   })
 })
+
+function generatePrincipalAssumeStatement(service: AwsService): object {
+  return {
+            Action: 'sts:AssumeRole',
+            Effect: 'Allow',
+            Principal: {
+              Service: `${service}.amazonaws.com`
+            }
+          }
+}

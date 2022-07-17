@@ -50,23 +50,29 @@
     "constructs": "^10.0.0"
   },
   "jsii": {
-    "outdir": "dist",
+        "tsc": {
+      "outDir": "dist",
+      "rootDir": "lib"
+    },
+    "outdir": "dist/",
+    "versionFormat": "full",
     "targets": {
-        "python": {
-            "distName": "aws-jsiisamples.jsii-code-samples",
-            "module": "aws_jsiisamples.jsii_code_samples"
-        },
-        "java": {
-            "package": "software.aws.jsiisamples.jsii",
-            "maven": {
-                "groupId": "software.aws.jsiisamples.jsii",
-                "artifactId": "jsii-code-samples"
-            }
-        },
-        "dotnet": {
-            "namespace": "AWSSamples.Jsii",
-            "packageId": "AWSSamples.Jsii"
+      "java": {
+        "package": "software.aws.jsiisamples.jsii",
+        "maven": {
+          "groupId": "software.aws.jsiisamples.jsii",
+          "artifactId": "jsii-code-samples"
         }
+      },
+      "python": {
+        "distName": "aws-jsiisamples.jsii-code-samples",
+        "module": "aws_jsiisamples.jsii_code_samples"
+      },
+      "dotnet": {
+        "namespace": "AWSSamples.Jsii",
+        "packageId": "AWSSamples.Jsii"
+      }
     }
-}
+  },
+  "stability": "experimental"
 }
