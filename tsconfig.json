@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "outDir": "dist",
+    "rootDir": "lib",
     "declarationMap": false,
     "inlineSourceMap": true,
     "inlineSources": true,
@@ -27,10 +29,10 @@
     "stripInternal": false,
     "target": "ES2020",
     "composite": false,
-    "tsBuildInfoFile": "tsconfig.tsbuildinfo"
+    "tsBuildInfoFile": "dist/tsconfig.tsbuildinfo"
   },
   "include": [
-    "**/*.ts"
+    "lib/**/*.ts"
   ],
   "exclude": [
     "node_modules"

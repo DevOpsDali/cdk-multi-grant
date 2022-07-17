@@ -3030,7 +3030,8 @@
       "pacmak": {
         "hasDefaultInterfaces": true
       }
-    }
+    },
+    "tscRootDir": "lib"
   },
   "name": "@dali/easy-service-principal",
   "readme": {
@@ -3043,8 +3044,8 @@
   "schema": "jsii/0.10.0",
   "targets": {
     "dotnet": {
-      "namespace": "AWSSamples.Jsii",
-      "packageId": "AWSSamples.Jsii"
+      "namespace": "Test.Jsii",
+      "packageId": "Test.Jsii"
     },
     "java": {
       "maven": {
@@ -3063,5 +3064,5 @@
   },
   "types": {},
   "version": "1.0.0",
-  "fingerprint": "WLTM3HCfj2R9lLzANwrlIvXop8Pz4gegfjCbGBZLKNk="
+  "fingerprint": "kR7hlcwZ6g7kQptKEPaH96h6CR/kISANzAuhcA2HbzU="
 }
