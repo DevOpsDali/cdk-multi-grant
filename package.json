@@ -1,8 +1,8 @@
 {
   "name": "@dali/easy-service-principal",
   "version": "1.0.0",
-  "main": "lib/index.ts",
-  "types": "lib/index.d.ts",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
   "repository": "git@github.com:DevOpsDali/easy-service-principal.git",
   "author": {
     "name": "Corey Ryan",
@@ -13,7 +13,7 @@
   "scripts": {
     "build": "jsii",
     "watch": "jsii -w",
-    "pack": "jsii-pacmak",
+    "jpack": "jsii-pacmak",
     "test": "jest"
   },
   "devDependencies": {
@@ -41,8 +41,6 @@
     "regenerator-runtime": "^0.13.9",
     "ts-jest": "^27.1.4",
     "ts-node": "^10.0.0",
-    "typedoc": "^0.22.11",
-    "typedoc-plugin-markdown": "^3.11.12",
     "typescript": "^4.7.4"
   },
   "peerDependencies": {
@@ -50,29 +48,30 @@
     "constructs": "^10.0.0"
   },
   "jsii": {
-        "tsc": {
-      "outDir": "dist",
-      "rootDir": "lib"
-    },
     "outdir": "dist/",
     "versionFormat": "full",
+    "tsc": {
+      "outDir": "dist/",
+      "rootDir": "lib/"
+    },
     "targets": {
       "java": {
-        "package": "software.aws.jsiisamples.jsii",
+        "package": "com.devopsdali.easyserviceprincipal",
         "maven": {
-          "groupId": "software.aws.jsiisamples.jsii",
-          "artifactId": "jsii-code-samples"
+          "groupId": "com.devopsdali.easyserviceprincipal",
+          "artifactId": "core"
         }
       },
       "python": {
-        "distName": "aws-jsiisamples.jsii-code-samples",
-        "module": "aws_jsiisamples.jsii_code_samples"
+        "distName": "dali-cdk.easy-service-principal",
+        "module": "dali-cdk.easy-service-principal"
       },
       "dotnet": {
-        "namespace": "AWSSamples.Jsii",
-        "packageId": "AWSSamples.Jsii"
+        "namespace": "DaliCdk.EasyServicePrincipal",
+        "packageId": "DaliCdk.EasyServicePrincipal",
+        "iconUrl": "https://raw.githubusercontent.com/module-icon.png"
       }
     }
   },
-  "stability": "experimental"
+  "stability": "stable"
 }

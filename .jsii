@@ -3020,7 +3020,7 @@
   },
   "description": "@dali/easy-service-principal",
   "docs": {
-    "stability": "experimental"
+    "stability": "stable"
   },
   "homepage": "git@github.com:DevOpsDali/easy-service-principal.git",
   "jsiiVersion": "1.61.0 (build abf4039)",
@@ -3031,7 +3031,7 @@
         "hasDefaultInterfaces": true
       }
     },
-    "tscRootDir": "lib"
+    "tscRootDir": "lib/"
   },
   "name": "@dali/easy-service-principal",
   "readme": {
@@ -3044,25 +3044,26 @@
   "schema": "jsii/0.10.0",
   "targets": {
     "dotnet": {
-      "namespace": "Test.Jsii",
-      "packageId": "Test.Jsii"
+      "iconUrl": "https://raw.githubusercontent.com/module-icon.png",
+      "namespace": "DaliCdk.EasyServicePrincipal",
+      "packageId": "DaliCdk.EasyServicePrincipal"
     },
     "java": {
       "maven": {
-        "artifactId": "jsii-code-samples",
-        "groupId": "software.aws.jsiisamples.jsii"
+        "artifactId": "core",
+        "groupId": "com.devopsdali.easyserviceprincipal"
       },
-      "package": "software.aws.jsiisamples.jsii"
+      "package": "com.devopsdali.easyserviceprincipal"
     },
     "js": {
       "npm": "@dali/easy-service-principal"
     },
     "python": {
-      "distName": "aws-jsiisamples.jsii-code-samples",
-      "module": "aws_jsiisamples.jsii_code_samples"
+      "distName": "dali-cdk.easy-service-principal",
+      "module": "dali-cdk.easy-service-principal"
     }
   },
   "types": {},
   "version": "1.0.0",
-  "fingerprint": "kR7hlcwZ6g7kQptKEPaH96h6CR/kISANzAuhcA2HbzU="
+  "fingerprint": "9AGd1selcS3cwGu8n/DMORgIdTX86ymFNoRgBBR6TbY="
 }
